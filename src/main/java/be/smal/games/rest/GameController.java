@@ -21,6 +21,7 @@ public class GameController {
 
     @GetMapping()
     public List<Game> getGames(Principal principal){
+        //messing with security
         System.out.println(principal.getName());
         return gameService.findAll();
     }
