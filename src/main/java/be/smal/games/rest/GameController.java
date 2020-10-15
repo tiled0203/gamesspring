@@ -20,14 +20,14 @@ public class GameController {
     GameService gameService;
 
     @GetMapping()
-    public List<Game> getGames(Principal principal){
+    public Iterable<Game> getGames(Principal principal){
         //messing with security
         System.out.println(principal.getName());
         return gameService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Game getGame(@PathVariable Long id){
+    public Game getGame(@PathVariable Integer id){
         return gameService.findById(id);
     }
 }

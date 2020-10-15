@@ -23,8 +23,11 @@ public class CategoryController {
 
     //trying to get this to work
     @PostMapping(path = "")
-    public void saveCategory(@RequestBody CategoryDTO categoryDTO) {
-        categoryService.save(categoryDTO);
+    public Category saveCategory(@RequestBody CategoryDTO categoryDTO) {
+        return categoryService.save(categoryDTO);
     }
 
+    public void remove(int after) {
+        categoryService.remove(after);
+    }
 }

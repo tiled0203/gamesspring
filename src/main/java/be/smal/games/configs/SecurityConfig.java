@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 //playing with options
-                //.antMatchers("/game*").hasRole("ADMIN")
+                .antMatchers("/game*").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

@@ -14,7 +14,7 @@ public class GameService {
     @Autowired
     GameJPARepository gameRepository;
 
-    public Game findById(Long id) {
+    public Game findById(Integer id) {
         Optional<Game> game = gameRepository.findById(id);
         if (game.isPresent()) return game.get();
 
@@ -22,7 +22,7 @@ public class GameService {
 
     }
 
-    public List<Game> findAll() {
+    public Iterable<Game> findAll() {
         return gameRepository.findAll();
     }
 }

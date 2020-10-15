@@ -2,10 +2,7 @@ package be.smal.games.domain;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -14,10 +11,12 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Game {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     @Column(name = "category_id")
-    private int categoryId;
+    private Integer categoryId;
 
     @Column(name = "difficulty_id")
     private Integer difficultyId;
@@ -54,7 +53,6 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" +
-                "id=" + id +
                 ", categoryId=" + categoryId +
                 ", difficultyId=" + difficultyId +
                 ", gameName='" + gameName + '\'' +
