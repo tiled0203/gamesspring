@@ -18,8 +18,12 @@ public class Category implements Serializable {
     private int id;
     private String category_name;
 
+
     @Override
     public String toString() {
-        return "Category category_name: "+this.category_name;
+        return "Category{" +
+                "id=" + id +
+                ", category_name='" + category_name + '\'' +
+                '}';
     }
 }

@@ -1,6 +1,6 @@
 package be.smal.games.rest;
 
-import be.smal.games.Services.CategoryService;
+import be.smal.games.services.CategoryService;
 import be.smal.games.domain.Category;
 import be.smal.games.domaindto.CategoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;

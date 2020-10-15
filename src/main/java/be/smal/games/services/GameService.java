@@ -1,11 +1,10 @@
-package be.smal.games.Services;
+package be.smal.games.services;
 
 import be.smal.games.domain.Game;
 import be.smal.games.repositories.GameJPARepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
