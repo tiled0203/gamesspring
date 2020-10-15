@@ -35,7 +35,7 @@
         <appender-ref ref="Console" />
     </root>
 
-    <logger name="be.smal.games.services" level="trace" additivity="false">
+    <logger name="be.smal.games.services.CategoryService" level="trace" additivity="false">
         <appender-ref ref="RollingPersistence" />
         <appender-ref ref="Console" />
     </logger>
