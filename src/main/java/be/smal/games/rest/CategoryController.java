@@ -3,6 +3,7 @@ package be.smal.games.rest;
 import be.smal.games.services.CategoryService;
 import be.smal.games.domain.Category;
 import be.smal.games.domaindto.CategoryDTO;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,8 @@ public class CategoryController {
         return categoryService.save(categoryDTO);
     }
 
-    public void remove(int after) {
+    @DeleteMapping
+    public void remove(int after) throws NotFoundException {
         categoryService.remove(after);
     }
 }

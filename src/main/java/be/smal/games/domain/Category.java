@@ -16,7 +16,7 @@ public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String category_name;
+    private String category_name; // no snake casing, use camel casing and use @Column to map to a db column
 
 
     @Override

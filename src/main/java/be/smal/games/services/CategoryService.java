@@ -3,6 +3,7 @@ package be.smal.games.services;
 import be.smal.games.domain.Category;
 import be.smal.games.domaindto.CategoryDTO;
 import be.smal.games.repositories.CategoryRepository;
+import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +33,18 @@ public class CategoryService {
         return categoryRepository.save(category);
     }
 
-    public void remove(int id) {
+    public void remove(int id) throws NotFoundException {
         log.trace(String.format("removing category with id: %d from the database", id));
         categoryRepository.delete(this.findById(id));
     }
 
-    public Category findById(int id) {
+    public Category findById(int id) throws NotFoundException {
        Optional<Category> category = categoryRepository.findById(id);
        if (category.isPresent()){
            return category.get();
        }
-       throw new NullPointerException("Category not found");
+       // category is not found, this doesn't mean that its a NullPointerException
+//       throw new NullPointerException("Category not found");
+        throw new NotFoundException("Category not found");
     }
 }
